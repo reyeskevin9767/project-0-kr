@@ -67,6 +67,7 @@ public class User {
         this.password = password;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        System.out.println("User was created");
     }
 
 

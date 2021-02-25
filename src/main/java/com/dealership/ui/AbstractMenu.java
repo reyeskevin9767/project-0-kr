@@ -1,4 +1,9 @@
 package com.dealership.ui;
 
-public class AbstractMenu {
+import java.util.Scanner;
+
+public abstract class AbstractMenu {
+
+    public abstract void showMenu(Scanner scan);
+
 }
