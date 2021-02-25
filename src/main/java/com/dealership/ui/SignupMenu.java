@@ -12,9 +12,10 @@ import java.util.Scanner;
  *
  */
 
-public class SignupMenu {
+public class SignupMenu extends AbstractMenu{
 
-    public void showMenu() {
+    @Override
+    public void showMenu(Scanner scan){
         System.out.println("=====Welcome To Dealing Cars=====");
         Scanner scanner = new Scanner(System.in);
 
