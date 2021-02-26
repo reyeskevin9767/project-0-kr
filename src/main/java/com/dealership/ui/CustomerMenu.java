@@ -18,7 +18,9 @@ public class CustomerMenu extends AbstractMenu{
         System.out.println("5: Return To Login Screen");
         switch(scan.nextLine()){
             case "1":
-                // TODO: CREATE A MENU THAT SHOWS ALL THE CARS
+                ViewAllCarsMenu vm = new ViewAllCarsMenu();
+                vm.showMenu(scan);
+                break;
             case "2":
                 // TODO: ALLOW USER TO MAKE AN OFFER
             case "3":

@@ -38,9 +38,10 @@ public class SignupMenu extends AbstractMenu{
         System.out.println("Provide Us With An Email: ");
         String email = scan.nextLine();
 
-//        System.out.println(us.addUser(username, password, phoneNumber, email) ?
-//                "successfully made "+username :
-//                "cancelled registration");
+        System.out.println(us.addUser(username, password, phoneNumber, email) ?
+                username + " was successfully made " :
+                "Unable to registrar");
+        System.out.println();
 
     }
 }
