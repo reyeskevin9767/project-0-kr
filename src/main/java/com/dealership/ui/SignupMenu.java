@@ -1,6 +1,6 @@
 package com.dealership.ui;
 
-import com.dealership.model.User;
+import com.dealership.services.UserService;
 
 import java.util.Scanner;
 
@@ -16,11 +16,19 @@ public class SignupMenu extends AbstractMenu{
 
     @Override
     public void showMenu(Scanner scan){
+
+        UserService us = new UserService();
+
         System.out.println("=====Welcome To Dealing Cars=====");
         Scanner scanner = new Scanner(System.in);
+        String username = "";
 
-        System.out.println("Username: ");
-        String username = scanner.nextLine();
+        do{
+            System.out.println("Username: ");
+            username = scanner.nextLine();
+        }while(us.doesUsernameExist(username));
+
+
 
         System.out.println("Password: ");
         String password = scanner.nextLine();
@@ -31,9 +39,7 @@ public class SignupMenu extends AbstractMenu{
         System.out.println("Email: ");
         String email = scanner.nextLine();
 
-        User u = new User(username, password, phoneNumber, email);
-
-        System.out.println("Thanking of taking part of this new car dealerships");
+        System.out.println(us.makeUser(username,password, phoneNumber, email) ? username + " was successfully made" : "cancelled registration");
     }
 
 }
