@@ -11,26 +11,32 @@ public class Driver {
 
         Scanner scan = new Scanner(System.in);
 
-<<<<<<< HEAD
-        SignupMenu sm = new SignupMenu();
-        LoginMenu lm = new LoginMenu();
-
-        sm.showMenu(scan);
-        lm.showMenu(scan);
-
-=======
         LoginMenu lm = new LoginMenu();
         SignupMenu sm = new SignupMenu();
+        boolean continueLoop = true;
 
-        lm.showMenu(scan);
-        sm.showMenu(scan);
->>>>>>> b0375adfa9b976815d4b636cc14d401b0f332807
+        do {
+            System.out.println("Welcome to Dealing Cars");
+            System.out.println("What Would You Like To Do: SignUp, Login, or Exit");
+            String answer = scan.nextLine().toLowerCase();
+
+            switch (answer){
+                case "exit":
+                    continueLoop = false;
+                    System.out.println("Thank You For Visiting Dealing Cars, Come Again");
+                case "signup":
+                case "sign up":
+                    sm.showMenu(scan);
+                    break;
+                case "login":
+                    lm.showMenu(scan);
+                    break;
+            }
+
+        } while (continueLoop);
 
 
     }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> b0375adfa9b976815d4b636cc14d401b0f332807
 }

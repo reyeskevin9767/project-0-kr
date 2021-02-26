@@ -1,36 +1,31 @@
 package com.dealership.ui;
 
-<<<<<<< HEAD
+import com.dealership.model.User;
 import com.dealership.services.UserService;
 
-=======
->>>>>>> b0375adfa9b976815d4b636cc14d401b0f332807
 import java.util.Scanner;
 
 public class LoginMenu extends AbstractMenu {
 
-<<<<<<< HEAD
-
-=======
->>>>>>> b0375adfa9b976815d4b636cc14d401b0f332807
     @Override
     public void showMenu(Scanner scan) {
 
-        System.out.println("Username: ");
-        String username = scan.nextLine();
+        for(int i =0; i <= 2; i++) {
+            System.out.println("username: ");
+            String username = scan.nextLine().toLowerCase();
 
-        System.out.println("Password: ");
-        String password = scan.nextLine();
+            System.out.println("password: ");
+            String password = scan.nextLine();
 
-<<<<<<< HEAD
-        User user = new UserService().findUserByUserName(username);
+            User u = new UserService().findUserByUsername(username);
 
+            if (u == null || !u.getPassword().equals(password)) {
+                System.out.println("login failed");
+            } else {
+                System.out.println("Welcome Back" + u.getUsername());
 
+                break;
+            }
+        }
     }
-
-
-
-=======
-    }
->>>>>>> b0375adfa9b976815d4b636cc14d401b0f332807
 }

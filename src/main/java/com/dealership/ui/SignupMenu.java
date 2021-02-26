@@ -1,50 +1,6 @@
 package com.dealership.ui;
 
-<<<<<<< HEAD
 import com.dealership.services.UserService;
-
-import java.util.Scanner;
-
-/**
- *
- *      TODO:   Check for validation for each variable
- *      TODO:   Check if user already exist in the system
- *
- *
- */
-
-public class SignupMenu extends AbstractMenu{
-
-    @Override
-    public void showMenu(Scanner scan){
-
-        UserService us = new UserService();
-
-        System.out.println("=====Welcome To Dealing Cars=====");
-        Scanner scanner = new Scanner(System.in);
-        String username = "";
-
-        do{
-            System.out.println("Username: ");
-            username = scanner.nextLine();
-        }while(us.doesUsernameExist(username));
-
-
-
-        System.out.println("Password: ");
-        String password = scanner.nextLine();
-
-        System.out.println("Phone Number: ");
-        String phoneNumber = scanner.nextLine();
-
-        System.out.println("Email: ");
-        String email = scanner.nextLine();
-
-        System.out.println(us.makeUser(username,password, phoneNumber, email) ? username + " was successfully made" : "cancelled registration");
-    }
-
-=======
-import com.dealership.model.User;
 
 import java.util.Scanner;
 
@@ -53,24 +9,37 @@ public class SignupMenu extends AbstractMenu{
     @Override
     public void showMenu(Scanner scan) {
 
-        System.out.println("=====Welcome To Dealing Cares=====");
+        UserService us = new UserService();
 
-        System.out.println("Username: ");
-        String username = scan.nextLine();
+        System.out.println("====Ready To Join====");
+        String username = "";
 
-        System.out.println("Password: ");
+        do{
+            if (!us.doesUsernameExist(username)) {
+                System.out.println("Provide Us With Username, Please Try Again: ");
+            }else{
+                System.out.println("Username Already Taken : ");
+            }
+
+            username = scan.nextLine();
+        } while(us.doesUsernameExist(username));
+
+
+        // TODO : Check length of password
+        System.out.println("Provide Us With Password: ");
         String password = scan.nextLine();
 
-        System.out.println("Phone Number: ");
+        // TODO: check phoneNumber
+        System.out.println("Provide Us With Phone Number:");
         String phoneNumber = scan.nextLine();
 
-        System.out.println("Email: ");
+        // TODO: check email
+        System.out.println("Provide Us With An Email: ");
         String email = scan.nextLine();
 
-        User us = new User(username, password, phoneNumber, email);
-
-        System.out.println(us.getUsername());
+        System.out.println(us.addUser(username, password, phoneNumber, email) ?
+                "successfully made "+username :
+                "cancelled registration");
 
     }
->>>>>>> b0375adfa9b976815d4b636cc14d401b0f332807
 }
