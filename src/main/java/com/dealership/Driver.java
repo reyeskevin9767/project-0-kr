@@ -17,7 +17,8 @@ public class Driver {
 
         do {
             System.out.println("Welcome to Dealing Cars");
-            System.out.println("What Would You Like To Do: SignUp, Login, or Exit");
+            System.out.println();
+            System.out.println("What Would You Like To Do: Signup, Login, or Exit");
             String answer = scan.nextLine().toLowerCase();
 
             switch (answer){
