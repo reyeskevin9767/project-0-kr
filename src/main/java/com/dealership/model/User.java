@@ -2,17 +2,29 @@ package com.dealership.model;
 
 public class User {
 
+<<<<<<< HEAD
     // Instance Variables
+=======
+>>>>>>> b0375adfa9b976815d4b636cc14d401b0f332807
     private String username;
     private String password;
     private String phoneNumber;
     private String email;
 
+<<<<<<< HEAD
     // TODO : Could change this to using an enum
     private boolean customerAccount;
 
 
     // Getter And Setters
+=======
+    // TODO: Should change this to using enum
+    private boolean customerAccount;
+
+    //Getter and Setters
+
+
+>>>>>>> b0375adfa9b976815d4b636cc14d401b0f332807
     public String getUsername() {
         return username;
     }
@@ -67,6 +79,10 @@ public class User {
         this.password = password;
         this.phoneNumber = phoneNumber;
         this.email = email;
+<<<<<<< HEAD
+=======
+        System.out.println("User was created");
+>>>>>>> b0375adfa9b976815d4b636cc14d401b0f332807
     }
 
 

@@ -1,5 +1,6 @@
 package com.dealership.services;
 
+<<<<<<< HEAD
 import com.dealership.model.User;
 
 /**
@@ -46,4 +47,7 @@ public class UserService {
         return false;
     }
 
+=======
+public class UserService {
+>>>>>>> b0375adfa9b976815d4b636cc14d401b0f332807
 }
